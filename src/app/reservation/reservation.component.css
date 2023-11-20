@@ -1,0 +1,29 @@
+#house {
+  border: solid 2px black;
+  border-radius: 15px;
+  width: 200%;
+}
+
+#gif {
+  width: 20%;
+  position: absolute;
+}
+
+#price {
+  width: 40%;
+  background-color:rgb(25,135,84);
+  font-family: sans-serif;
+  text-align: center;
+border-radius: 5px;
+color: white;
+
+}
+
+
+label {
+    opacity: 0.7;
+}
+
+.col-md-8{
+    margin-bottom: 15%;
+}

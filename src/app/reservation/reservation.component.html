@@ -1,0 +1,54 @@
+<div>
+    <img src="/assets/giphy-unscreen.gif" alt="" id="gif">
+</div>
+
+<section class="container">
+    <h1 class="text-center text-mutedmb-2 mt-2"></h1>
+
+    <div class="row">
+        <div class="col-md-4 mx-auto d-flex justify-content-center">
+            <img [src]="Housechosen.picture" alt="" width="450" id="house">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="mt-2">
+                <label for="">Nom</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="mt-2">
+                <label for="">Adresse mail</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="mt-2">
+                <label for="">Adresse</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="mt-2">
+                <label for="">N° de téléphone</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="mt-2">
+                <label for="">Nb de personnes</label>
+                <input type="number" class="form-control" min="1" [(ngModel)]="numberOfPersons" (change)="updatePrice()">
+            </div>
+            <div class="mt-4" id="price">
+                <label for="">Prix pour {{ numberOfPersons }} Personne(s) ( Par jour )</label>
+                <p>{{ Housechosen.price * numberOfPersons }}€</p>
+            </div>
+            <div class="mt-2">
+                <label for="">Date d'arrivée</label>
+                <input type="date" class="form-control" [(ngModel)]="arrivalDate" (change)="updateMaxDepartureDate()">
+            </div>
+            <div class="mt-2">
+                <label for="">Date de départ</label>
+                <input type="date" class="form-control" [(ngModel)]="departureDate" [min]="maxDepartureDate">
+            </div>
+            <div class="mt-2 mb-5">
+                <button id="validationButton" class="btn btn-success mt-2 btn-block w-100"
+                    (click)="validerReservation()" (click)="toggleHouseIndisponible()">Valider la réservation</button>
+            </div>
+        </div>
+    </div>
+
+</section>

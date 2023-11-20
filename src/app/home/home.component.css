@@ -1,0 +1,75 @@
+div input {
+  border: solid 1px rgb(0, 0, 0);
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+section img {
+  width: 150%;
+  height: 250px;
+  object-fit: cover;
+  border: solid 2px rgb(57, 59, 84);
+  border-radius: 10px;
+}
+
+.housemain :hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.col-md-8 {
+  margin-left: 60px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 3px black;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+#imgdownside {
+  display: flex;
+}
+
+.imgmodal {
+  border: solid 2px black;
+  border-radius: 10px;
+}
+
+.textmodal {
+  width: 38%;
+  font-family: "Ubuntu", sans-serif;
+}
+.modaltitle {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.row {
+  justify-content: center;
+}
+
+.house-indisponible {
+  position: relative;
+  pointer-events: none;
+}
+
+.house-indisponible::after {
+  content: url(/assets/success1.png);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-content {
+  background: linear-gradient(to top, rgb(255, 209, 176), rgb(183, 115, 138));
+}
+
+.modal-footer {
+  padding: 10px 5px 10px 0;
+}

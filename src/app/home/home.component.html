@@ -1,0 +1,52 @@
+<main class="container">
+    <h1 class="text-center mt-2 mb-2"><img src="assets/logo.png" alt="" width="350"></h1>
+    <div>
+        <h1 class="text-center"><img src="assets/pok.png" alt="" width="50"></h1>
+        <h6 class="text-center"><strong>Dans quelle ville souhaitez vous louer ?</strong></h6>
+        <div class="col-md-5 mx-auto mt-2">
+            <input type="text" placeholder="Rechercher" class="form-control" #event (keyup)="searchFilter(event.value)">
+        </div>
+    </div>
+    <section class="row mx-auto">
+        <div class="col-md-2 mt-3 p-3 d-flex justify-content-center mx-5 housemain" *ngFor="let house of allHouses"
+            [ngClass]="{'house-indisponible': !house.disponible}" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            (click)="viewHouse(house)" (click)="onImageClick()">
+            <img [src]="house.picture" alt="">
+        </div>
+    </section>
+</main>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog d-flex align-items-center justify-content-center">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-7" id="exampleModalLabel">{{Housechosen.name}}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img [src]="Housechosen.picture" alt="" width="100%" class="imgmodal">
+                    </div>
+                    <div id="imgdownside">
+                        <div class="col-md-9 mt-5 textmodal">
+                            <p>Ville: {{Housechosen.place}}</p>
+                            <p>Prix par nuit (en €): {{Housechosen.price}}</p>
+                            <p>Disponibilité : Oui</p>
+                        </div>
+                        <img src="/assets/tumblr-lu5fxnLtIF1qzolrpo1-128-unscreen.gif" alt="" id="gif"
+                            style="width: 66%;">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voir d'autres maisons</button>
+                <button type="button" class="btn bg-danger" data-bs-dismiss="modal" (click)="deleteHouse()">Pas
+                    intéréssé par ce bien</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                    [routerLink]="['reservation',Housechosen.id]">Réserver</button>
+            </div>
+        </div>
+    </div>
+</div>
